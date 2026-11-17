@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Registration | Campus Sports Tournament Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="register">
+<header class="site-header">
+  <div class="wrap">
+    <p class="eyebrow">Inter-Department Sports Fest • 2026–27</p>
+    <h1>Campus Sports Tournament Dashboard</h1>
+    <p class="tag">Train hard. Play fair. Win together. 🏆</p>
+  </div>
+</header>
+<nav class="nav" aria-label="Main navigation"><div class="wrap"><a href="index.html">Home Dashboard</a><a href="schedule.html">Schedule &amp; Standings</a><a href="register.html" aria-current="page">Team Registration</a><a href="sports.html">Sports Categories</a><a href="live-scores.html">Live Match Center</a><a href="results.html">Results &amp; Prize Pool</a><a href="admin.html">Admin Control Panel</a></div></nav>
+<main><div class="wrap">
+
+<section class="grid two">
+  <div>
+    <h2>📝 Team Registration</h2>
+    <p class="sub">Registration form for team captains.</p>
+    <form class="f panel" id="regForm" novalidate>
+      <label>Team / Department<select id="dept"></select></label>
+      <div class="row2">
+        <label>Branch<input type="text" id="branch" placeholder="Enter branch name" maxlength="60"></label>
+        <label>Sport<select id="sport"></select></label>
+      </div>
+      <label>Team Captain<input type="text" id="captain" placeholder="Captain's full name" maxlength="60"></label>
+      <label>Email<input type="email" id="email" placeholder="captain@example.com" maxlength="80"></label>
+      <button class="btn dark" type="submit">Submit Team Registration</button>
+      <p class="form-msg" id="regMsg" role="alert"></p>
+    </form>
+  </div>
+  <div>
+    <h2>Registered Teams</h2>
+    <p class="sub">Status is updated by the coordinators.</p>
+    <div class="tablewrap"><table><thead><tr><th>Department</th><th>Sport</th><th>Branch</th><th>Captain</th><th>Status</th></tr></thead><tbody id="regBody"></tbody></table></div>
+  </div>
+</section>
+</div></main>
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

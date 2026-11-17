@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Control Panel | Campus Sports Tournament Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="admin">
+<header class="site-header">
+  <div class="wrap">
+    <p class="eyebrow">Inter-Department Sports Fest • 2026–27</p>
+    <h1>Campus Sports Tournament Dashboard</h1>
+    <p class="tag">Train hard. Play fair. Win together. 🏆</p>
+  </div>
+</header>
+<nav class="nav" aria-label="Main navigation"><div class="wrap"><a href="index.html">Home Dashboard</a><a href="schedule.html">Schedule &amp; Standings</a><a href="register.html">Team Registration</a><a href="sports.html">Sports Categories</a><a href="live-scores.html">Live Match Center</a><a href="results.html">Results &amp; Prize Pool</a><a href="admin.html" aria-current="page">Admin Control Panel</a></div></nav>
+<main><div class="wrap">
+
+<section>
+  <h2>⚙️ Admin Control Panel</h2>
+  <p class="sub">Phase 1 prototype (no secure login). Everything saved here appears on the other pages in this browser. Open Home or Live Match Center in a second tab to watch changes arrive.</p>
+</section>
+<div class="grid two">
+  <div>
+    <div class="panel">
+      <h3>📢 Publish Announcement</h3>
+      <form class="f" id="annForm"><label>Announcement<textarea id="annText" rows="3" maxlength="300" placeholder="Write a tournament announcement..."></textarea></label>
+      <button class="btn dark" type="submit">Publish to Home page</button></form>
+      <ul class="clean" id="annList" style="margin-top:12px"></ul>
+    </div>
+    <div class="panel">
+      <h3>🔴 Update Live Score</h3>
+      <form class="f" id="liveForm">
+        <label>Sport<select id="lvSport"></select></label>
+        <div class="row2"><label>Team A<select id="lvA"></select></label><label>Team B<select id="lvB"></select></label></div>
+        <div class="row2"><label>Team A score<input type="number" id="lvScoreA" min="0" value="0"></label><label>Team B score<input type="number" id="lvScoreB" min="0" value="0"></label></div>
+        <label>Match progress<select id="lvProgress"></select></label>
+        <label class="check"><input type="checkbox" id="lvIsLive" checked> Match is live</label>
+        <button class="btn dark" type="submit">Update live score</button>
+      </form>
+      <form class="f" id="evForm" style="margin-top:16px">
+        <h3 style="margin:0">Add timeline event</h3>
+        <div class="row2"><label>Minute<input type="text" id="evMin" placeholder="e.g. 45" maxlength="5"></label><label>Event<input type="text" id="evText" placeholder="e.g. BCA Department goal" maxlength="80"></label></div>
+        <button class="btn small dark" type="submit">Add event</button>
+      </form>
+      <button class="btn" id="finalBtn" type="button" style="margin-top:16px">Finish match &amp; save as final result</button>
+    </div>
+    <div class="panel">
+      <h3>✅ Record a Match Result</h3>
+      <form class="f" id="resForm">
+        <label>Sport<select id="rsSport"></select></label>
+        <div class="row2"><label>Team A<select id="rsA"></select></label><label>Team B<select id="rsB"></select></label></div>
+        <div class="row2"><label>Team A score<input type="number" id="rsScoreA" min="0" value="0"></label><label>Team B score<input type="number" id="rsScoreB" min="0" value="0"></label></div>
+        <button class="btn dark" type="submit">Record result</button>
+      </form>
+      <ul class="clean" id="resList" style="margin-top:12px"></ul>
+    </div>
+  </div>
+  <div>
+    <div class="panel">
+      <h3>📅 Add Fixture</h3>
+      <form class="f" id="fxForm">
+        <label>Sport<select id="fxSport"></select></label>
+        <div class="row2"><label>Team A<select id="fxA"></select></label><label>Team B<select id="fxB"></select></label></div>
+        <label>Date / time<input type="text" id="fxDate" placeholder="e.g. 12 Dec, 4:00 PM" maxlength="40"></label>
+        <button class="btn dark" type="submit">Add to schedule</button>
+      </form>
+      <ul class="clean" id="fxList" style="margin-top:12px"></ul>
+    </div>
+    <div class="panel">
+      <h3>🏅 Awards &amp; Final Results</h3>
+      <form class="f" id="awardForm">
+        <div id="awardInputs" class="f"></div>
+        <div class="row2"><label>First place<select id="pdFirst"></select></label><label>Second place<select id="pdSecond"></select></label></div>
+        <label>Third place<select id="pdThird"></select></label>
+        <button class="btn dark" type="submit">Publish to Results page</button>
+      </form>
+    </div>
+    <div class="panel">
+      <h3>📋 Registration Review</h3>
+      <div class="tablewrap"><table><thead><tr><th>Department</th><th>Sport</th><th>Captain</th><th>Status</th><th></th></tr></thead><tbody id="regReview"></tbody></table></div>
+    </div>
+    <div class="panel">
+      <h3>☎️ Contact &amp; Inquiry</h3>
+      <p><strong>Student Sports Coordinator:</strong> Arjun · <a href="mailto:arjun.sports@college.edu">arjun.sports@college.edu</a><br>
+      <strong>Sports Faculty:</strong> Ravi · <a href="mailto:ravi.faculty@college.edu">ravi.faculty@college.edu</a></p>
+      <form class="f" id="inqForm">
+        <div class="row2"><label>Your name<input type="text" id="inqName" maxlength="60"></label><label>Email<input type="email" id="inqEmail" maxlength="80"></label></div>
+        <label>Message<textarea id="inqMsg" rows="3" maxlength="300"></textarea></label>
+        <button class="btn dark" type="submit">Submit inquiry</button>
+      </form>
+      <ul class="clean" id="inqList" style="margin-top:12px"></ul>
+    </div>
+    <div class="panel"><h3>Demo data</h3><p class="sub">Clear everything saved in this browser and return to the sample data.</p><button class="btn danger" id="resetBtn" type="button">Reset demo data</button></div>
+  </div>
+</div>
+</div></main>
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

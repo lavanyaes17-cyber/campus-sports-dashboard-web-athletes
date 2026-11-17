@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Results & Prize Pool | Campus Sports Tournament Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="results">
+<header class="site-header">
+  <div class="wrap">
+    <p class="eyebrow">Inter-Department Sports Fest • 2026–27</p>
+    <h1>Campus Sports Tournament Dashboard</h1>
+    <p class="tag">Train hard. Play fair. Win together. 🏆</p>
+  </div>
+</header>
+<nav class="nav" aria-label="Main navigation"><div class="wrap"><a href="index.html">Home Dashboard</a><a href="schedule.html">Schedule &amp; Standings</a><a href="register.html">Team Registration</a><a href="sports.html">Sports Categories</a><a href="live-scores.html">Live Match Center</a><a href="results.html" aria-current="page">Results &amp; Prize Pool</a><a href="admin.html">Admin Control Panel</a></div></nav>
+<main><div class="wrap">
+
+<section>
+  <h2>🏆 Results &amp; Prize Pool</h2>
+  <p class="sub">Championship results and awards, published by the coordinators.</p>
+  <h3>Final Results</h3>
+  <div class="panel" id="finalResults"></div>
+</section>
+<section>
+  <h3>Player Awards</h3>
+  <div class="grid three" id="awardGrid"></div>
+</section>
+<section class="grid two">
+  <div>
+    <h3>Prize Pool Distribution</h3>
+    <div class="tablewrap"><table><thead><tr><th>Position</th><th>Award</th><th>Department</th></tr></thead><tbody id="prizeBody"></tbody></table></div>
+    <p class="note-small">Prize amounts are pending official confirmation.</p>
+  </div>
+  <div>
+    <h3>Match Results</h3>
+    <div class="tablewrap"><table><thead><tr><th>Sport</th><th>Match</th><th>When</th></tr></thead><tbody id="matchBody"></tbody></table></div>
+  </div>
+</section>
+</div></main>
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
